@@ -1,0 +1,17 @@
+from sqlalchemy import Boolean, Column, Integer, String, DateTime
+from sqlalchemy.sql import func
+from .database import Base
+from datetime import datetime, timedelta
+
+class URL(Base):
+    __tablename__ = "urls"
+
+    id = Column(Integer, primary_key=True)
+    key = Column(String, unique=True, index=True)
+    secret_key = Column(String, unique=True, index=True)
+    target_url = Column(String, index=True)
+    is_active = Column(Boolean, default=True)
+    clicks = Column(Integer, default=0)
+    created_at = Column(DateTime, server_default=func.now())
+    last_used = Column(DateTime, onupdate=func.now())
+    expires_at = Column(DateTime, default=lambda: datetime.utcnow() + timedelta(minutes=5))
