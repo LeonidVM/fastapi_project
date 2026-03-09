@@ -161,7 +161,7 @@ python -m fast_api_app.telegram_bot
 
 В дальнейшем планирую перенести в бота весь функционал приложения и прикрутить дополнительный. Например, можно сделать хорошую визуализацию статистики и добавить продвинутую регистрацию пользователей
 
-### ⚙️ Установка и запуск
+### Установка и запуск
 
 #### Локально
 ```bash
@@ -171,7 +171,7 @@ cd fastapi_project
 
 # 2. Виртуальное окружение
 python -m venv venv
-source venv/bin/activate  # или `venv\Scripts\activate` для Windows
+source venv/bin/activate 
 
 # 3. Зависимости
 pip install -r requirements.txt
@@ -180,6 +180,5 @@ pip install -r requirements.txt
 uvicorn fast_api_app.main:app --reload
 ```
 
-После запуска доступна автоматическая документация:
+После запуска доступна ссылка:
 - Swagger UI: http://localhost:8000/docs
-- ReDoc: http://localhost:8000/redoc
